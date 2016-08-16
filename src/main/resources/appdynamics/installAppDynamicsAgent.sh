@@ -25,7 +25,7 @@ else
 	cp "${container.startupScript}" "${container.startupScript}.xld-bak"
 fi
 
-JAVA_OPTS="-javaagent:${container.appDynamicsHome}/javaagent.jar"
+JAVA_OPTS="-javaagent:${container.appDynamicsHome}/AppServerAgent/javaagent.jar"
 
 <#if container.applicationName??>
 	JAVA_OPTS="$JAVA_OPTS -Dappdynamics.agent.applicationName=${container.applicationName}"
