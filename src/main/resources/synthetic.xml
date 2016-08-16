@@ -21,12 +21,19 @@
         <property name="appDynamicsHome" category="appdynamics" description="AppDynamics Homedir to unpack the Agent to. Will skip unzipping if dir already exists." default="/opt/appdynamics/" />
 
         <method name="installAppDynamicsAgent"
-                description="Performs an install of the AppDynamics "
-                task-description="Performs a stop / start task on multiple Tomcat servers"
+                description="Performs an install of the AppDynamics agent"
+                task-description="Performs an install of the AppDynamics agent"
                 delegate="shellScript"
                 classpathResources="appdynamics/AppServerAgent.zip" 
                 templateClasspathResources="appdynamics/controller-info.xml"
                 script="appdynamics/installAppDynamicsAgent.sh">
+        </method>
+
+        <method name="uninstallAppDynamicsAgent"
+                description="Performs an uninstall of the AppDynamics agent"
+                task-description="Performs an uninstall of the AppDynamics agent"
+                delegate="shellScript"
+                script="appdynamics/uninstallAppDynamicsAgent.sh">
         </method>
 
     </type-modification>
