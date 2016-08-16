@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!--
+
+    THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS
+    FOR A PARTICULAR PURPOSE. THIS CODE AND INFORMATION ARE NOT SUPPORTED BY XEBIALABS.
+    
+-->
+<synthetic xsi:schemaLocation="http://www.xebialabs.com/deployit/synthetic synthetic.xsd" xmlns="http://www.xebialabs.com/deployit/synthetic" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+    <type-modification type="generic.Container">
+        <property name="controllerHost" description="AppDynamics Controller Host" category="appdynamics" default="xebialabs.saas.appdynamics.com"/>
+        <property name="accountAccessKey" category="appdynamics" password="true" description="AppDynamics Account Access Key" />
+        <property name="startupScript" category="appdynamics" description="Startup script to add AppDynamics agent to. Install will add JAVA_OPTS with agent loading code." />
+
+        <property name="appDynamicsHome" category="appdynamics" description="AppDynamics Homedir to unpack the Agent to. Will skip unzipping if dir already exists." default="/opt/appdynamics/" />
+
+
+
+        <method name="installAppDynamicsAgent"
+                description="Performs an install of the AppDynamics "
+                task-description="Performs a stop / start task on multiple Tomcat servers"
+                delegate="shellScript"
+                classpathResources="appdynamics/AppServerAgent.zip" 
+                templateClasspathResources="appdynamics/controller-info.xml"
+                script="appdynamics/installAppDynamicsAgent.sh">
+        </method>
+    </type-modification>
+
+</synthetic>
