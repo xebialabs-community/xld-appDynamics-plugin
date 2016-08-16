@@ -9,13 +9,16 @@
 <synthetic xsi:schemaLocation="http://www.xebialabs.com/deployit/synthetic synthetic.xsd" xmlns="http://www.xebialabs.com/deployit/synthetic" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 
     <type-modification type="generic.Container">
+
         <property name="controllerHost" description="AppDynamics Controller Host" category="appdynamics" default="xebialabs.saas.appdynamics.com"/>
         <property name="accountAccessKey" category="appdynamics" password="true" description="AppDynamics Account Access Key" />
+        <property name="applicationName" category="appdynamics" description="Specify the logical business application name that this jvm node belongs to." />
+        <property name="tierName" category="appdynamics" description="Specify the logical business tier this node belongs to.
+    examples for a business tier can be 'ACME Frontend' or 'ACME Backend Service' etc." />
+        <property name="nodeName" category="appdynamics" description="Specify a unique name for this jvm node. The name must be unique within the business application. e.g. weblogicinstance23 or
+    hweb24." />
         <property name="startupScript" category="appdynamics" description="Startup script to add AppDynamics agent to. Install will add JAVA_OPTS with agent loading code." />
-
         <property name="appDynamicsHome" category="appdynamics" description="AppDynamics Homedir to unpack the Agent to. Will skip unzipping if dir already exists." default="/opt/appdynamics/" />
-
-
 
         <method name="installAppDynamicsAgent"
                 description="Performs an install of the AppDynamics "
@@ -25,6 +28,7 @@
                 templateClasspathResources="appdynamics/controller-info.xml"
                 script="appdynamics/installAppDynamicsAgent.sh">
         </method>
+
     </type-modification>
 
 </synthetic>
