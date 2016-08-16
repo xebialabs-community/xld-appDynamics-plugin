@@ -23,14 +23,14 @@ Place the plugin jar file into your `SERVER_HOME/plugins` directory.
 
 # Usage #
 
+## Properties defined on each containers for AppDynamics
+![Preview](/docs/images/appdynamics-properties.png)
+
+## Menu to find install / uninstall options
+![Preview](/docs/images/container-menu.png)
+
 ## Example of output when installing an agent
 ![Preview](/docs/images/install-agent.png)
  
- ## Example of output when uninstalling an agent
+## Example of output when uninstalling an agent
 ![Preview](/docs/images/uninstall-agent.png)
-
-## Example of menu to find install / uninstall options
-![Preview](/docs/images/container-menu.png)
-
-## Example of properties defined on each containers for AppDynamics
-![Preview](/docs/images/appdynamics-properties.png)
